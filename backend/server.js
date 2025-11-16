@@ -61,7 +61,7 @@ app.use('/uploads', express.static(path.join(__dirname, './uploads'), {
 }));
 
 // Database connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/dwatson_pk';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://wasidev710_db_user:5xwzp9OQcJkMe1Tu@cluster0.ycj6rnq.mongodb.net/newdata?retryWrites=true&w=majority&appName=Cluster0';
 const dbSync = require('./services/databaseSync');
 
 if (!process.env.MONGODB_URI) {
