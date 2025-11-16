@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - D.Watson Pharmacy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0"><i class="fas fa-phone"></i> +92 300 1234567 | <i class="fas fa-envelope"></i> info@dwatson.pk</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <a href="/login" class="text-white me-3"><i class="fas fa-user"></i> Login</a>
+                        <a href="/cart" class="text-white cart-icon">
+                            <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/images/logo.png" alt="D.Watson Pharmacy" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="departmentsDropdown" role="button" data-bs-toggle="dropdown">
+                                Departments
+                            </a>
+                            <ul class="dropdown-menu" id="departmentsMenu">
+                                <!-- Departments will be loaded from backend -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products">All Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products?filter=discounted">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <div class="search-box me-3">
+                            <label for="mainSearch" class="visually-hidden">Search products</label>
+                            <input type="text" class="form-control" id="mainSearch" name="search" placeholder="Search products..." aria-label="Search products">
+                            <button class="btn btn-search" type="button" aria-label="Search"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="bg-light py-3">
+            <div class="container">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">About Us</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- About Us Hero -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 mb-4">About D.Watson Pharmacy</h1>
+                        <p class="lead">Trusted healthcare and beauty partner since 1975</p>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="/images/logo-white.png" alt="D.Watson Pharmacy" class="img-fluid" style="max-height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="mb-4">Our Story</h2>
+                        <p class="lead">D.Watson is a Pakistani retail pharmacy chain founded in 1975 by brothers Zahid and Zafar Iqbal Bakhtawari in Islamabad.</p>
+                        
+                        <p>The company was named in tribute to the English doctor, Dr. Watson, who helped Zafar Iqbal with an eye ailment that almost caused him to lose his sight. This act of kindness and medical expertise inspired the brothers to create a pharmacy that would serve the community with the same dedication and care.</p>
+
+                        <h3 class="mt-5 mb-3">Our Mission</h3>
+                        <p>To provide accessible, affordable, and high-quality healthcare and beauty products to every household in Pakistan. We believe that good health and self-care should be available to everyone, regardless of their location or economic status.</p>
+
+                        <h3 class="mt-5 mb-3">Our Values</h3>
+                        <div class="row g-4 mt-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                                        <h5>Compassion</h5>
+                                        <p>We care deeply about the health and wellbeing of our customers and their families.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                                        <h5>Trust</h5>
+                                        <p>For nearly 50 years, we've been a trusted name in healthcare across Pakistan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <i class="fas fa-award fa-3x text-primary mb-3"></i>
+                                        <h5>Quality</h5>
+                                        <p>We source only the finest products from trusted manufacturers and suppliers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                                        <h5>Community</h5>
+                                        <p>We're committed to serving our local communities with personalized care and attention.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-5 mb-3">Our Journey</h3>
+                        <div class="timeline">
+                            <div class="timeline-item mb-4">
+                                <div class="d-flex">
+                                    <div class="timeline-marker bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; min-width: 50px;">
+                                        <strong>1975</strong>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5>Foundation</h5>
+                                        <p>Zahid and Zafar Iqbal Bakhtawari founded D.Watson Pharmacy in Islamabad, starting with a single store dedicated to providing quality medicines and healthcare products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item mb-4">
+                                <div class="d-flex">
+                                    <div class="timeline-marker bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; min-width: 50px;">
+                                        <strong>1980s</strong>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5>Expansion</h5>
+                                        <p>Expanded to multiple locations across Islamabad and Rawalpindi, becoming a household name in the twin cities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item mb-4">
+                                <div class="d-flex">
+                                    <div class="timeline-marker bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; min-width: 50px;">
+                                        <strong>2000s</strong>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5>Digital Innovation</h5>
+                                        <p>Launched online presence and e-commerce platform, making healthcare accessible to customers nationwide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item mb-4">
+                                <div class="d-flex">
+                                    <div class="timeline-marker bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; min-width: 50px;">
+                                        <strong>Today</strong>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5>Modern Healthcare</h5>
+                                        <p>Continuing to serve millions of customers with a comprehensive range of medicines, cosmetics, health devices, and wellness products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Why Choose D.Watson?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-pills fa-3x text-primary mb-3"></i>
+                            <h5>Wide Product Range</h5>
+                            <p>From prescription medicines to beauty products, we have everything you need under one roof.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-user-md fa-3x text-primary mb-3"></i>
+                            <h5>Expert Pharmacists</h5>
+                            <p>Our qualified pharmacists are always available to provide guidance and answer your health questions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-truck fa-3x text-primary mb-3"></i>
+                            <h5>Fast Delivery</h5>
+                            <p>Quick and reliable delivery service to get your products to you when you need them most.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-dollar-sign fa-3x text-primary mb-3"></i>
+                            <h5>Competitive Prices</h5>
+                            <p>Best prices guaranteed with regular offers and discounts on a wide range of products.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-certificate fa-3x text-primary mb-3"></i>
+                            <h5>Authentic Products</h5>
+                            <p>100% genuine products sourced directly from authorized distributors and manufacturers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                            <h5>24/7 Online Service</h5>
+                            <p>Shop anytime, anywhere with our convenient online platform available round the clock.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-about">
+                        <img src="/images/logo-white.png" alt="D.Watson Pharmacy" class="footer-logo">
+                        <p>D.Watson is a Pakistani retail pharmacy chain founded in 1975.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/products">All Products</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-links">
+                        <h4>Departments</h4>
+                        <ul id="footerDepartments">
+                            <!-- Departments will be loaded from backend -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                        <p><i class="fas fa-envelope"></i> info@dwatson.pk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2023 D.Watson Pharmacy. All Rights Reserved. Website built and designed by Bilal Shah. All rights reserved by D.Watson.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/about.js"></script>
+</body>
+</html>
+

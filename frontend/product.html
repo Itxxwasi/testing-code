@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - D.Watson Cosmetics</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DM Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Gothic/Old English Font for Logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Englebert&family=Creepster&family=Eater&family=Nosifer&display=swap" rel="stylesheet">
+    <!-- Line Awesome Icons -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dwatson-styles.css">
+</head>
+<body>
+    <!-- Header (dwatsoncosmetics.pk style) -->
+    <header id="header" class="header logo-center_2l header-2-lines">
+        <!-- Main Header -->
+        <div class="header-main-wrap">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Search Bar (Left Side) -->
+                        <div class="header-search-left hide-mobile col-md-3">
+                            <div class="header-search-wrapper">
+                                <form action="/products" method="get" class="header-search-form">
+                                    <input type="text" name="search" class="header-search-input" placeholder="Search for products ..." autocomplete="off">
+                                    <button type="submit" class="header-search-button" aria-label="Search">
+                                        <i class="icon-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Logo -->
+                        <div class="header-logo hide-desktop flex-1">
+                            <a href="/" class="site-header__logo-image" title="D.Watson">
+                                <img src="/images/logo.png" alt="D.Watson" loading="eager" class="header-logo-img">
+                            </a>
+                        </div>
+
+                        <!-- Desktop Logo (Center) -->
+                        <div class="header-logo hide-mobile col-md-6">
+                            <h1>
+                                <a href="/" class="site-header__logo-image" aria-label="D.Watson">
+                                    <img src="/images/logo.png" alt="D.Watson" loading="eager" class="header-logo-img">
+                                </a>
+                            </h1>
+                        </div>
+
+                        <!-- Right Header Controls (Account, Wishlist, Cart) -->
+                        <div class="header-top-meta col-md-3 col-9">
+                            <ul class="header-control">
+                                <!-- User Icon (Person) -->
+                                <li class="item-list signin hide-mobile">
+                                    <a href="/login.html" class="header-icon" title="Login">
+                                        <span class="icon"><i class="far fa-user"></i></span>
+                                    </a>
+                                </li>
+                                <!-- Heart Icon (Wishlist) -->
+                                <li class="item-list wishlist hide-mobile">
+                                    <a href="/wishlist.html" class="header-icon" title="Wishlist">
+                                        <span class="icon"><i class="far fa-heart"></i></span>
+                                        <span class="header__counter wishlist-count">0</span>
+                                    </a>
+                                </li>
+                                <!-- Orders Icon (Stacked Items) -->
+                                <li class="item-list notifications hide-mobile">
+                                    <a href="/orders.html" class="header-icon" title="Orders">
+                                        <span class="icon"><i class="far fa-copy"></i></span>
+                                        <span class="header__counter notification-count">0</span>
+                                    </a>
+                                </li>
+                                <!-- Shopping Bag Icon (Cart) -->
+                                <li class="item-list cart-block">
+                                    <a href="/cart.html" class="header-icon cart-icon" title="Cart">
+                                        <span class="icon"><i class="fas fa-shopping-bag"></i></span>
+                                        <span class="header__counter cart-count">0</span>
+                                    </a>
+                                </li>
+                                <!-- Mobile Search Icon -->
+                                <li class="header_search hide-desktop">
+                                    <a href="/search" class="header-search push_side header-icon" data-id="#search_pupop" title="Search">
+                                        <span class="icon"><i class="icon-search"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb" id="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Product</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-details py-5">
+        <div class="container">
+            <div id="productLoading" class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Loading product details...</p>
+            </div>
+            
+            <div id="productError" class="alert alert-danger" style="display: none;">
+                <h4>Product Not Found</h4>
+                <p>The product you're looking for doesn't exist or has been removed.</p>
+                <a href="/products" class="btn btn-primary">Browse All Products</a>
+            </div>
+            
+            <div id="productContent" style="display: none;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="product-image-wrapper">
+                            <img id="productImage" src="" alt="" class="img-fluid product-main-image">
+                            <div id="productBadges" class="product-badges"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <nav aria-label="breadcrumb" class="mb-3">
+                            <ol class="breadcrumb" id="productBreadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            </ol>
+                        </nav>
+                        <h1 id="productName" class="product-title"></h1>
+                        <div id="productPrice" class="product-price mb-3"></div>
+                        <div id="productDescription" class="product-description mb-4"></div>
+                        <div id="productMeta" class="product-meta mb-4">
+                            <p><strong>Category:</strong> <span id="productCategory"></span></p>
+                            <p><strong>Department:</strong> <span id="productDepartment"></span></p>
+                            <p><strong>Stock:</strong> <span id="productStock"></span></p>
+                        </div>
+                        <div class="product-actions mb-4">
+                            <div class="quantity-selector mb-3">
+                                <label for="productQuantity" class="form-label">Quantity:</label>
+                                <div class="input-group" style="width: 150px;">
+                                    <button class="btn btn-outline-secondary" type="button" id="decreaseQty">-</button>
+                                    <input type="number" class="form-control text-center" id="productQuantity" value="1" min="1" max="10">
+                                    <button class="btn btn-outline-secondary" type="button" id="increaseQty">+</button>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button id="addToCartBtn" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button id="addToWishlistBtn" class="btn btn-outline-secondary">
+                                    <i class="far fa-heart"></i> Add to Wishlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About D.Watson</h5>
+                    <p>Your trusted source for cosmetics and beauty products.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Email: info@dwatson.pk</p>
+                    <p>Phone: +92 300 1234567</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 D.Watson Cosmetics. All rights reserved. Website built and designed by Bilal Shah. All rights reserved by D.Watson.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Product JS -->
+    <script src="/js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "dwatson-pharmacy-backend",
+  "version": "1.0.0",
+  "description": "D.Watson Pharmacy E-Commerce Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "backup-media": "node scripts/backup-media-before-migration.js",
+    "migrate-media-to-local": "node scripts/migrate-media-to-local-files.js",
+    "backup-media-live": "node scripts/backup-media-live-before-migration.js",
+    "migrate-media-live-to-local": "node scripts/migrate-media-live-to-local-files.js"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "keywords": [
+    "pharmacy",
+    "ecommerce",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.0",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^7.0.10",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  }
+}

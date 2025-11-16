@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d2a6e">
+    <title>D.Watson Pharmacy - Your Health & Beauty Partner</title>
+    
+    <!-- Resource Hints for Performance (like dwatsoncosmetics.pk) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://maxst.icons8.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="/css/dwatson-styles.css" as="style">
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" as="style">
+    
+    <!-- Critical CSS Inline (for above-fold content) -->
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+        }
+        h1, .h1, h2, .h2, h3, .h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+        }
+        /* Prevent FOUC */
+        .page-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-loading.hidden {
+            display: none;
+        }
+    </style>
+    
+    <!-- Load CSS (non-blocking) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+    
+    <!-- DM Sans Font (Same as dwatsoncosmetics.pk) -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Non-critical fonts loaded asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Englebert&family=Creepster&family=Eater&family=Nosifer&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Englebert&family=Creepster&family=Eater&family=Nosifer&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Icons (deferred) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    
+    <link rel="preload" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"></noscript>
+    
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css?v=2">
+    <link rel="stylesheet" href="/css/dwatson-styles.css?v=2">
+</head>
+<body>
+    <!-- Loading Screen (like dwatsoncosmetics.pk) -->
+    <div class="page-loading">
+        <div style="text-align: center;">
+            <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #2d2a6e; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+            <style>
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+        </div>
+    </div>
+    
+    <!-- Header (dwatsoncosmetics.pk style) -->
+    <header id="header" class="header logo-center_2l header-2-lines">
+        <!-- Top Scrolling Announcement Bar (Will be replaced by scrolling text section) -->
+        <div id="shopify-section-top-header" class="shopify-section cms-top-header" style="display: none;">
+            <!-- This will be replaced by dynamic scrolling text section -->
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main-wrap">
+            <div class="header-top">
+            <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Mobile Menu Button -->
+                        <div class="col-3 d-lg-none">
+                            <button class="js-mobile-menu btn p-0 border-0 bg-transparent" type="button" aria-label="Toggle navigation">
+                                <span class="icon">
+                                    <i class="fas fa-bars" style="color: #ffffff; font-size: 22px;"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <!-- Search Bar (Left Side) -->
+                        <div class="header-search-left hide-mobile col-md-3">
+                            <div class="header-search-wrapper">
+                                <form action="/products.html" method="get" class="header-search-form">
+                                    <input type="text" name="search" class="header-search-input" placeholder="Search for products ..." autocomplete="off">
+                                    <button type="submit" class="header-search-button" aria-label="Search">
+                                        <i class="icon-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Logo -->
+                        <div class="header-logo hide-desktop flex-1">
+                            <a href="/" class="site-header__logo-image" title="D.Watson">
+                                <img src="/images/logo.png" alt="D.Watson" loading="eager" class="header-logo-img">
+                            </a>
+                        </div>
+
+                        <!-- Desktop Logo (Center) -->
+                        <div class="header-logo hide-mobile col-md-6">
+                            <h1>
+                                <a href="/" class="site-header__logo-image" aria-label="D.Watson">
+                                    <img src="/images/logo.png" alt="D.Watson" loading="eager" class="header-logo-img">
+                                </a>
+                            </h1>
+                        </div>
+
+                        <!-- Right Header Controls (Account, Wishlist, Cart) -->
+                        <div class="header-top-meta col-md-3 col-9">
+                            <ul class="header-control">
+                                <!-- User Icon (Person) - visible on all screen sizes -->
+                                <li class="item-list signin">
+                                    <a href="/login.html" class="header-icon" title="Login">
+                                        <span class="icon"><i class="far fa-user"></i></span>
+                                    </a>
+                                </li>
+                                <!-- Heart Icon (Wishlist) -->
+                                <li class="item-list wishlist hide-mobile">
+                                    <a href="/wishlist.html" class="header-icon" title="Wishlist">
+                                        <span class="icon"><i class="far fa-heart"></i></span>
+                                        <span class="header__counter wishlist-count">0</span>
+                                    </a>
+                                </li>
+                                <!-- Orders Icon (Stacked Items) -->
+                                <li class="item-list notifications hide-mobile">
+                                    <a href="/orders.html" class="header-icon" title="Orders">
+                                        <span class="icon"><i class="far fa-copy"></i></span>
+                                        <span class="header__counter notification-count">0</span>
+                                    </a>
+                                </li>
+                                <!-- Shopping Bag Icon (Cart) -->
+                                <li class="item-list cart-block">
+                                    <a href="/cart.html" class="header-icon cart-icon" title="Cart">
+                                        <span class="icon"><i class="fas fa-shopping-bag"></i></span>
+                                        <span class="header__counter cart-count">0</span>
+                                    </a>
+                                </li>
+                                <!-- Mobile Search Icon -->
+                                <li class="header_search hide-desktop">
+                                    <a href="/search" class="header-search push_side header-icon" data-id="#search_pupop" title="Search">
+                                        <span class="icon"><i class="icon-search"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Navigation -->
+            <div class="header-nav">
+                <div class="header-nav-inner">
+                    <div class="box-header-nav">
+                        <div class="container-wapper">
+                            <nav class="main-menu-wrapper">
+                                <ul id="menu-main-menu" class="main-menu clone-main-menu">
+                                    <li class="menu-item">
+                                        <a href="/products.html?filter=discounted" class="cms-item-title">11.11 Sale</a>
+                                    </li>
+                                    <li class="menu-item type_dropdown has-children">
+                                        <a href="#" class="cms-item-title dropdown-toggle nav-category-link" data-category-key="makeup" id="makeupDropdown" data-bs-toggle="dropdown">
+                                            Makeup
+                                            <span class="icon-dropdown"><i class="icon-angle-down"></i></span>
+                                        </a>
+                                        <ul class="dropdown-menu sub-menu" id="makeupMenu">
+                                            <!-- Categories loaded dynamically -->
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item type_dropdown has-children">
+                                        <a href="#" class="cms-item-title dropdown-toggle nav-category-link" data-category-key="skincare" id="skincareDropdown" data-bs-toggle="dropdown">
+                                            Skin Care
+                                            <span class="icon-dropdown"><i class="icon-angle-down"></i></span>
+                                        </a>
+                                        <ul class="dropdown-menu sub-menu" id="skincareMenu">
+                                            <!-- Categories loaded dynamically -->
+                                        </ul>
+                        </li>
+                                    <li class="menu-item type_dropdown has-children">
+                                        <a href="#" class="cms-item-title dropdown-toggle nav-category-link" data-category-key="haircare" id="haircareDropdown" data-bs-toggle="dropdown">
+                                            Hair Care
+                                            <span class="icon-dropdown"><i class="icon-angle-down"></i></span>
+                                        </a>
+                                        <ul class="dropdown-menu sub-menu" id="haircareMenu">
+                                            <!-- Categories loaded dynamically -->
+                            </ul>
+                        </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="shampoo">Shampoo</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="lingerie">Lingerie</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="perfumes">Perfumes</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="watches">Watches</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="toiletries">Toiletries</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="electronics">Electronics</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="optics">Optics</a>
+                        </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="cms-item-title nav-category-link" data-category-key="toys">Toys</a>
+                        </li>
+                                    <li class="menu-item type_dropdown has-children">
+                                        <a href="#" class="cms-item-title dropdown-toggle" id="departmentsDropdown" data-bs-toggle="dropdown">
+                                            Shop
+                                            <span class="icon-dropdown"><i class="icon-angle-down"></i></span>
+                                        </a>
+                                        <ul class="dropdown-menu sub-menu" id="departmentsMenu">
+                                            <!-- Departments loaded dynamically -->
+                                        </ul>
+                        </li>
+                                    <li class="menu-item">
+                                        <a href="/blog.html" class="cms-item-title">Blog</a>
+                        </li>
+                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Panel -->
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="mobile-menu-content">
+            <button class="mobile-menu-close" type="button" aria-label="Close navigation">&times;</button>
+            <ul class="mobile-menu-list">
+                <li class="menu-item">
+                    <a href="/products.html?filter=discounted" class="cms-item-title">11.11 Sale</a>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="/products.html?category=makeup" class="cms-item-title">
+                        Makeup
+                    </a>
+                    <ul class="dropdown-menu sub-menu" id="mobileMakeupMenu">
+                        <!-- Makeup categories (optional, can be synced later) -->
+                    </ul>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="/products.html?category=skincare" class="cms-item-title">
+                        Skin Care
+                    </a>
+                    <ul class="dropdown-menu sub-menu" id="mobileSkincareMenu">
+                        <!-- Skincare categories (optional, can be synced later) -->
+                    </ul>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="/products.html?category=haircare" class="cms-item-title">
+                        Hair Care
+                    </a>
+                    <ul class="dropdown-menu sub-menu" id="mobileHaircareMenu">
+                        <!-- Haircare categories (optional, can be synced later) -->
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=shampoo" class="cms-item-title">Shampoo</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=lingerie" class="cms-item-title">Lingerie</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=perfumes" class="cms-item-title">Perfumes</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=watches" class="cms-item-title">Watches</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=toiletries" class="cms-item-title">Toiletries</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=electronics" class="cms-item-title">Electronics</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/products.html?category=optics" class="cms-item-title">Optics</a>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="#" class="cms-item-title">
+                        Shop
+                    </a>
+                    <ul class="dropdown-menu sub-menu" id="mobileDepartmentsMenu">
+                        <!-- Departments can be injected here if needed -->
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="/blog.html" class="cms-item-title">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Search Popup -->
+    <div id="search_pupop" class="push-side-panel">
+        <div class="push-side-panel__wrapper">
+            <span class="close-push">×</span>
+            <div class="push-side-panel__content">
+                <h3>Search Products</h3>
+                <form action="/products.html" method="get" class="search-form">
+                    <input type="text" name="search" id="searchInput" placeholder="Search for products..." autocomplete="off">
+                    <button type="submit"><i class="icon-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Dynamic Homepage Sections Container (dwatsoncosmetics.pk style) -->
+        <div id="homepage-sections-container" class="homepage-sections-container">
+            <!-- New homepage sections will be rendered here -->
+        </div>
+
+        <!-- Old Sections (Fallback - shown immediately, hidden when new sections are loaded) -->
+        <div id="old-sections-fallback">
+        <!-- Hero Slider -->
+        <section class="hero-carousel position-relative">
+            <div class="hero-overlay"></div>
+            <div class="hero-carousel__viewport">
+                <div class="hero-carousel__track" id="heroSlides">
+                    <!-- Slides populated dynamically -->
+                </div>
+                <div class="hero-carousel__dots" id="heroDots"></div>
+                <button class="hero-carousel__nav hero-carousel__nav--prev" type="button" aria-label="Previous slide">
+                    <span>&lsaquo;</span>
+                </button>
+                <button class="hero-carousel__nav hero-carousel__nav--next" type="button" aria-label="Next slide">
+                    <span>&rsaquo;</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Value Propositions -->
+        <section class="value-props py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-truck-fast"></i>
+                            </div>
+                            <h5>Same-Day Delivery</h5>
+                            <p>Swift doorstep delivery across Islamabad & Rawalpindi for essentials and prescriptions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h5>Pharmacist Support</h5>
+                            <p>Licensed pharmacists available 24/7 for dosage, interaction and wellness guidance.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <h5>100% Authentic</h5>
+                            <p>Partnered with top global brands. Every product is sourced and stored to WHO standards.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-pump-soap"></i>
+                            </div>
+                            <h5>Health & Beauty Hub</h5>
+                            <p>From medicines to cosmetics – explore 50,000+ SKUs curated for your family.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Icon Ribbon -->
+        <!-- Top Banner Section -->
+        <section class="banner-section py-3" id="topBannerSection" style="display: none;">
+            <div class="container">
+                <div class="promo-banner" id="topBanner">
+                    <!-- Top banner populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section class="category-ribbon py-4">
+            <div class="container">
+                <div class="category-ribbon__grid" id="categoryRibbon">
+                    <!-- Category icons populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Banner Trio -->
+        <section class="promo-grid">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a class="promo-card" href="/departments/perfume">
+                            <div class="promo-card__media" style="background-image: url('https://dwatson.pk/static/frontend/Magento/luma/en_US/DWatson_HomepageBanner/images/homepage-banners/desktop/25e03bf3c4e384a4d014305e666076db.png');"></div>
+                            <div class="promo-card__body">
+                                <h5>Fragrance Boutique</h5>
+                                <p>Luxury scents curated for every season. Exclusive in-store testers available.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a class="promo-card" href="/departments/health-devices">
+                            <div class="promo-card__media" style="background-image: url('https://dwatson.pk/static/frontend/Magento/luma/en_US/DWatson_HomepageBanner/images/homepage-banners/desktop/5eafbed5cb5f1e0006db407605b5e086.png');"></div>
+                            <div class="promo-card__body">
+                                <h5>Health Devices</h5>
+                                <p>Smart monitors, thermometers, and mobility aids at member-only prices.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a class="promo-card" href="/departments/cosmetics">
+                            <div class="promo-card__media" style="background-image: url('https://dwatson.pk/static/frontend/Magento/luma/en_US/DWatson_HomepageBanner/images/homepage-banners/desktop/f71b5191cf176dcfdfa702c128204e46.png');"></div>
+                            <div class="promo-card__body">
+                                <h5>Beauty Vault</h5>
+                                <p>International bestsellers and derm-approved essentials in one place.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments Showcase -->
+        <section class="departments-showcase py-5">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="eyebrow">Shop by department</span>
+                        <h2>Discover trusted care for every need</h2>
+                    </div>
+                    <a href="/products" class="btn btn-outline-primary btn-sm">View all products</a>
+                </div>
+                <div class="row g-4" id="departmentsShowcase">
+                    <!-- Departments populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories - REMOVED (duplicate, already shown after slider) -->
+        
+        <!-- Category Spotlight Sections - REMOVED (duplicate) -->
+
+        <!-- Brand Partners (Dynamically Loaded) -->
+        <section class="brand-marquee py-4" id="static-brand-section">
+            <div class="container">
+                <div class="brand-marquee__inner" id="static-brand-marquee">
+                    <!-- Brands will be loaded dynamically from API -->
+                </div>
+            </div>
+        </section>
+
+        <!-- In-store Experience CTA -->
+        <section class="store-cta">
+            <div class="store-cta__media"></div>
+            <div class="store-cta__overlay">
+                <span class="eyebrow">Visit Us In-Store</span>
+                <h2>Experience D.Watson Flagship Service</h2>
+                <p>Book a personalised consultation with our pharmacists and beauty advisors at Blue Area, Islamabad. Same-day prescription filling and skin diagnostics available.</p>
+                <div class="store-cta__actions">
+                    <a href="tel:+923001234567" class="btn btn-primary">Call for Appointment</a>
+                    <a href="https://maps.google.com/?q=D.Watson+Blue+Area" class="btn btn-outline-primary" target="_blank" rel="noopener">Get Directions</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Products (fallback skeletons - hidden when new homepage sections load) -->
+        <section class="product-section py-5">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="eyebrow">Trending Now</span>
+                        <h2>Carefully chosen for quick relief</h2>
+                    </div>
+                    <a href="/products?filter=trending" class="btn btn-outline-primary btn-sm">View all</a>
+                </div>
+                <div class="row g-4" id="tradingItems">
+                    <!-- Instant skeleton placeholders -->
+                    <div class="col-6 col-md-3">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3 d-none d-md-block">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3 d-none d-md-block">
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mid Page Banner -->
+        <section class="banner-section py-5" id="middleBannerSection" style="display: none;">
+            <div class="container">
+                <div class="promo-banner" id="middleBanner">
+                    <!-- Middle banner populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Deals (fallback skeletons) -->
+        <section class="product-section py-5">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="eyebrow">Limited Time Offers</span>
+                        <h2>Save more on curated bundles</h2>
+                    </div>
+                    <a href="/products?filter=discounted" class="btn btn-outline-primary btn-sm">Browse offers</a>
+                </div>
+                <div class="row g-4" id="discountedProducts">
+                    <!-- Instant skeleton placeholders -->
+                    <div class="col-6 col-md-3">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3 d-none d-md-block">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3 d-none d-md-block">
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals (fallback skeletons) -->
+        <section class="product-section py-5">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="eyebrow">Just In</span>
+                        <h2>Fresh arrivals for the season</h2>
+                    </div>
+                    <a href="/products?filter=new" class="btn btn-outline-primary btn-sm">Explore new arrivals</a>
+                </div>
+                <div class="row g-4" id="newArrivals">
+                    <!-- Instant skeleton placeholders -->
+                    <div class="col-6 col-md-3">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3 d-none d-md-block">
+                        <div class="skeleton-card"></div>
+                    </div>
+                    <div class="col-6 col-md-3 d-none d-md-block">
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Stories -->
+        <section class="testimonials py-5">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Trusted by millions since 1975</span>
+                    <h2>Customer stories from the D.Watson community</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <p>"D.Watson is my go-to pharmacy. Prescriptions arrive within hours and I always get a call to confirm dosage. Truly caring service."</p>
+                            <div class="testimonial-meta">
+                                <strong>Sana A.</strong>
+                                <span>Islamabad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <p>"Their cosmetics collection is on par with international retailers. I love that everything is authentic and well curated."</p>
+                            <div class="testimonial-meta">
+                                <strong>Zoya K.</strong>
+                                <span>Lahore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card">
+                            <p>"Managing chronic care is easier because the team sets up monthly reminders and home delivery. Peace of mind guaranteed."</p>
+                            <div class="testimonial-meta">
+                                <strong>Bilal H.</strong>
+                                <span>Rawalpindi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellness Journal -->
+        <section class="blog-highlights py-5">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="eyebrow">Wellness Journal</span>
+                        <h2>Latest advice from our in-house experts</h2>
+                    </div>
+                    <a href="/blog" class="btn btn-outline-primary btn-sm">Read all articles</a>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <article class="blog-card">
+                            <div class="blog-card__media" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80');"></div>
+                            <div class="blog-card__body">
+                                <span class="blog-card__tag">Health Talk</span>
+                                <h5>Understanding Blood Pressure Medications</h5>
+                                <p>Our pharmacists break down common prescriptions, potential side effects, and the lifestyle habits that make them work better.</p>
+                                <a href="/blog/blood-pressure-advice" class="blog-card__link">Read article</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="blog-card">
+                            <div class="blog-card__media" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80');"></div>
+                            <div class="blog-card__body">
+                                <span class="blog-card__tag">Beauty Lab</span>
+                                <h5>Layering Skincare for Islamabad’s Climate</h5>
+                                <p>Discover dermatologist-approved routines that hydrate, brighten, and protect your skin in high-altitude conditions.</p>
+                                <a href="/blog/skincare-layering" class="blog-card__link">Read article</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="blog-card">
+                            <div class="blog-card__media" style="background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=80');"></div>
+                            <div class="blog-card__body">
+                                <span class="blog-card__tag">Family Care</span>
+                                <h5>Building an Immunity Plan for Your Kids</h5>
+                                <p>Pediatricians share supplement tips, diet additions, and vaccination reminders to keep your little ones protected.</p>
+                                <a href="/blog/immunity-plan" class="blog-card__link">Read article</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <span class="eyebrow">Stay in the know</span>
+                        <h2>Exclusive deals, health tips &amp; beauty launches</h2>
+                        <p>Subscribe to get the first look at seasonal bundles, flash sales and pharmacist-led wellness sessions.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="newsletter-form">
+                            <div class="input-group input-group-lg">
+                                <label for="newsletterEmail" class="visually-hidden">Email address</label>
+                                <input type="email" class="form-control" id="newsletterEmail" name="email" placeholder="Enter your email address" aria-label="Enter your email address" required>
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                        <small class="text-muted d-block mt-2">We respect your privacy. Unsubscribe any time.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Chat Button -->
+        <div class="whatsapp-chat">
+            <a href="https://wa.me/923001234567?text=Hello%20D.Watson%20Cosmetics" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <!-- AI Messenger -->
+        <div class="ai-messenger">
+            <div class="messenger-toggle">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="messenger-window">
+                <div class="messenger-header">
+                    <h5>D.Watson Assistant</h5>
+                    <button class="close-messenger" type="button">&times;</button>
+                </div>
+                <div class="messenger-body">
+                    <div class="message bot-message">
+                        <p>Hello! I'm the D.Watson assistant. How can I help you today?</p>
+                    </div>
+                    <div class="messenger-messages" id="messengerMessages">
+                        <!-- Messages will appear here -->
+                    </div>
+                </div>
+                <div class="messenger-footer">
+                    <div class="input-group">
+                        <label for="messengerInput" class="visually-hidden">Type your message</label>
+                        <input type="text" class="form-control" id="messengerInput" name="message" placeholder="Type your message..." aria-label="Type your message">
+                        <button class="btn btn-primary" id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Banner Section -->
+        <section class="banner-section py-5" id="bottomBannerSection" style="display: none;">
+            <div class="container">
+                <div class="promo-banner" id="bottomBanner">
+                    <!-- Bottom banner populated dynamically -->
+                </div>
+            </div>
+        </section>
+        </div>
+        <!-- End Old Sections Fallback -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-about">
+                        <img src="/images/logo-white.png" alt="D.Watson Pharmacy" class="footer-logo">
+                        <p>D.Watson is a Pakistani retail pharmacy chain founded in 1975 by brothers Zahid and Zafar Iqbal Bakhtawari in Islamabad. The company was named in tribute to the English doctor, Dr. Watson, who helped Zafar Iqbal with an eye ailment that almost caused him to lose his sight.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-links">
+                        <h4>Departments</h4>
+                        <ul id="footerDepartments">
+                            <!-- Departments will be loaded from backend -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                        <p><i class="fas fa-envelope"></i> info@dwatson.pk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2023 D.Watson Pharmacy. All Rights Reserved. Website built and designed by Bilal Shah. All rights reserved by D.Watson.</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <img src="/images/payment-methods.png" alt="Payment Methods">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hide loading screen when page loads -->
+    <script>
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.page-loading');
+            if (loader) {
+                loader.classList.add('hidden');
+                setTimeout(() => loader.remove(), 300);
+            }
+        });
+    </script>
+    
+    <!-- Defer non-critical scripts (like dwatsoncosmetics.pk) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/js/logger.js" defer></script>
+    <script src="/js/main.js?v=4" defer></script>
+    <!-- version query to force latest homepage-sections.js to load -->
+    <script src="/js/homepage-sections.js?v=3" defer></script>
+</body>
+</html>

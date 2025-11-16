@@ -1,0 +1,12 @@
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs
+*.log
+
+# Uploads (keep structure, ignore content)
+uploads/**/*
+!uploads/.gitkeep
+
